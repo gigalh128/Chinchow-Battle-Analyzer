@@ -1,0 +1,27 @@
+{
+  "description": "Analyzes replays and realtime battles from Pokemon Showdown",
+  "manifest_version": 2,
+  "name": "Chinchow Battle Analyzer",
+  "version": "alpha",
+  "homepage_url": "https://none-at-the-moment.",
+  "icons": {
+    "48": "icons/icon-48.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon.png",
+    "default_title": "Chinchou Battle Analyzer",
+    "default_popup": "popup/menu.html",
+    "browser_style": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://play.pokemonshowdown.com/*", "*://replay.pokemonshowdown.com/*"],
+      "js": ["damage-calc-js/head.js", "damage-calc-js/util.js", "damage-calc-js/stats.js", "damage-calc-js/data/species.js", "damage-calc-js/data/types.js", "damage-calc-js/data/natures.js", "damage-calc-js/data/abilities.js", "damage-calc-js/data/moves.js", "damage-calc-js/data/items.js", "damage-calc-js/data/index.js", "damage-calc-js/move.js", "damage-calc-js/pokemon.js", "damage-calc-js/field.js", "damage-calc-js/items.js", "damage-calc-js/mechanics/util.js", "damage-calc-js/mechanics/gen78.js", "damage-calc-js/mechanics/gen56.js", "damage-calc-js/mechanics/gen4.js", "damage-calc-js/mechanics/gen3.js", "damage-calc-js/mechanics/gen12.js", "damage-calc-js/calc.js", "damage-calc-js/desc.js", "damage-calc-js/result.js", "damage-calc-js/adaptable.js", "damage-calc-js/index.js", "pkmn-js/learnsets.js", "pkmn-js/dex.js", "pkmn-js/data.js", "analyzer-js/structures.js", "analyzer-js/parser.js", "analyzer-js/analyzer.js", "analyzer-js/statcalculator.js", "main.js"]
+    }
+  ],
+  "web_accessible_resources": ["injects/*.js"]
+}
